@@ -7,3 +7,4 @@ INFO:     Started reloader process [847] using StatReload
 INFO:     Started server process [849]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     34.150.188.59:0 - "HEAD / HTTP/1.1" 404 Not Found
