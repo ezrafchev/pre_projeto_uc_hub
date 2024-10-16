@@ -8,6 +8,10 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Bem-vindo ao Sistema de Controle de Estoque"}
+
 @app.post("/insumos/", response_model=schemas.Insumo)
 def create_insumo(insumo: schemas.InsumoCreate, db: Session = Depends(get_db)):
     return crud.create_insumo(db=db, insumo=insumo)
