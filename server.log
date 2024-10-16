@@ -1,14 +1,9 @@
 INFO:     Will watch for changes in these directories: ['/home/user']
 INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [1027] using StatReload
+INFO:     Started reloader process [1756] using StatReload
 /home/user/venv/lib/python3.10/site-packages/pydantic/_internal/_config.py:341: UserWarning: Valid config keys have changed in V2:
 * 'orm_mode' has been renamed to 'from_attributes'
   warnings.warn(message, UserWarning)
-INFO:     Started server process [1029]
+INFO:     Started server process [1758]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     34.150.188.59:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
-INFO:     34.150.188.59:0 - "GET / HTTP/1.1" 200 OK
-INFO:     34.150.188.59:0 - "POST /insumos/ HTTP/1.1" 200 OK
-INFO:     34.150.188.59:0 - "GET /insumos/ HTTP/1.1" 200 OK
-INFO:     34.150.188.59:0 - "GET /insumos/1 HTTP/1.1" 200 OK
