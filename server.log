@@ -7,3 +7,7 @@ INFO:     Started reloader process [2082] using StatReload
 INFO:     Started server process [2084]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     34.150.188.59:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     34.150.188.59:0 - "GET / HTTP/1.1" 200 OK
+INFO:     34.150.188.59:0 - "POST /insumos/ HTTP/1.1" 200 OK
+INFO:     34.150.188.59:0 - "GET /insumos/ HTTP/1.1" 200 OK
