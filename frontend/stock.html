@@ -5,24 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle de Estoque</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Controle de Estoque</h1>
-    <table id="stockTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dados do estoque serão inseridos aqui -->
-        </tbody>
-    </table>
-    <script>
-        // Implementar lógica para buscar e exibir dados do estoque
-    </script>
+    <div class="container">
+        <h1 class="mt-5">Controle de Estoque</h1>
+        <table id="stockTable" class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados do estoque serão inseridos aqui -->
+            </tbody>
+        </table>
+        <script>
+            function fetchStock() {
+                fetch('http://127.0.0.1:8000/insumos/')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tbody = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
+                        tbody.innerHTML = '';
+                        data.forEach(insumo => {
+                            const row = tbody.insertRow();
+                            row.insertCell(0).innerText = insumo.id;
+                            row.insertCell(1).innerText = insumo.nome;
+                            row.insertCell(2).innerText = insumo.quantidade;
+                            row.insertCell(3).innerText = insumo.preco;
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar dados do estoque:', error);
+                    });
+            }
+
+            document.addEventListener('DOMContentLoaded', fetchStock);
+        </script>
+    </div>
 </body>
 </html>
