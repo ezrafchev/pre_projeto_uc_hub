@@ -58,11 +58,59 @@ pre_projeto_uc_hub/
 ```
 
 ## Endpoints da API
-- `POST /insumos/`: Cria um novo insumo.
-- `GET /insumos/`: Retorna uma lista de insumos.
-- `GET /insumos/{insumo_id}`: Retorna um insumo específico.
+
+### `POST /insumos/`
+Cria um novo insumo.
+
+**Request:**
+```json
+{
+  "nome": "Insumo A",
+  "quantidade": 10,
+  "preco": 5.99
+}
+```
+
+**Response:**
+```json
+{
+  "id": 1,
+  "nome": "Insumo A",
+  "quantidade": 10,
+  "preco": 5.99
+}
+```
+
+### `GET /insumos/`
+Retorna uma lista de insumos.
+
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "nome": "Insumo A",
+    "quantidade": 10,
+    "preco": 5.99
+  }
+]
+```
+
+### `GET /insumos/{insumo_id}`
+Retorna um insumo específico.
+
+**Response:**
+```json
+{
+  "id": 1,
+  "nome": "Insumo A",
+  "quantidade": 10,
+  "preco": 5.99
+}
+```
 
 ## Exemplos de Uso
+
 ### Criar um novo insumo
 ```bash
 curl -X POST "http://127.0.0.1:8000/insumos/" -H "Content-Type: application/json" -d '{"nome": "Insumo A", "quantidade": 10, "preco": 5.99}'
