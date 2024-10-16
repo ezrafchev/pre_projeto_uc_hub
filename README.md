@@ -20,7 +20,7 @@ Este projeto é um sistema de controle de estoque para uma clínica médica. Ele
 2. Crie e ative um ambiente virtual:
     ```bash
     python3 -m venv venv
-    venv\Scripts\activate
+    source venv/bin/activate  # No Windows use `venv\Scripts\activate`
     ```
 
 3. Instale as dependências:
